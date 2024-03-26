@@ -1,0 +1,204 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\begin{document}
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{2.0pt} \\
+		\Huge \textbf{{Developing Strategies for \\"Diamonds with GenAI"}}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{GenAI - Module3} \vspace*{10\baselineskip}}
+\date{}
+\author{\textbf{Lalithya Varma}}
+
+\maketitle
+\newpage
+
+\begin{frame}
+\frametitle{\LARGE Introduction and Problem Statement}
+\vspace{1cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Introduction}\par}
+
+\raggedright
+\Large
+"Diamonds with GenAL" introduces players to a dynamic card game requiring strategic insight and shrewd decision-making. In this game, players compete to acquire diamond cards through concealed bidding, aiming to amass the highest point total by the game's conclusion.
+
+In "Diamonds with GenAL," players are dealt a unique suit of cards, excluding diamonds, which are shuffled and auctioned one by one. Each player must bid with one of their own cards, aiming to secure the diamond card and its associated points. The diamond card is awarded to the player with the highest bid, enriching their score. In cases of tied bids, points from the diamond card are evenly distributed among the winning players.
+
+The ultimate objective is to emerge victorious by accumulating the most points through successful bidding and strategic maneuvering.
+\vspace{1cm}
+
+{\centering\textbf{\LARGE Problem Statement}\par}
+
+\raggedright
+\Large
+Develop a GenAI model capable of acquiring and executing successful bidding strategies tailored for the Diamonds card game. The AI should take into account variables such as card value, opponent behavior, and the specific value of the diamond being auctioned. Evaluation will be based on the AI's ability to secure victories and adapt to varying game scenarios effectively.
+
+\end{frame}
+
+\newpage
+\begin{frame}
+\frametitle{\LARGE Game Rules and Additional Details}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Game Rules}\par}
+
+\raggedright % Left-align the text
+\Large
+\begin{enumerate}
+    \item[\textbf{1.}] \textbf{Setup:} Each player is assigned a suit of cards (either spades or clubs), while the diamond cards are placed separately. These diamond cards are shuffled and auctioned off one by one.
+    \item[\textbf{2.}] \textbf{Bidding:} Players bid with one of their own cards face down. The player who bids the highest value card wins the diamond card being auctioned.
+    \item[\textbf{3.}] \textbf{Scoring:} The player who wins the bid gains the points of the diamond card and adds them to their score. If multiple players bid the same highest value card, the points from the diamond card are divided equally among them.
+    \item[\textbf{4.}] \textbf{Card Hierarchy:} The hierarchy of cards is as follows: 2 $<$ 3 $<$ 4 $<$ 5 $<$ 6 $<$ 7 $<$ 8 $<$ 9 $<$ 10 $<$ Jack $<$ Queen $<$ King $<$ Ace.
+    \item[\textbf{5.}] \textbf{End of Game:} The game ends when all diamond cards have been auctioned off. At this point, the scores of each player are calculated. The player with the highest total score wins the game.
+    \item[\textbf{6.}] \textbf{Playing Against AI:} In this version, the player competes against a computer opponent. The player and the computer bid for diamond cards, and the player with the card of the highest value compared to the diamond card wins the bid.
+    \item[\textbf{7.}] \textbf{Equal Division of Points:} If both the player and the computer bid the same highest value card, the points from the diamond card are divided equally between them.
+\end{enumerate}
+\end{frame}
+
+\newpage
+\begin{frame}
+\frametitle{\LARGE Teaching GenAI the Diamonds Game}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Approach and Initial Challenges}\par}
+
+\raggedright
+\Large
+Teaching GenAI the Diamonds card game involved a systematic approach to familiarize the AI with the game's rules and dynamics. Initially, the AI demonstrated a promising grasp of the game's fundamentals, accurately rewriting the rules based on provided instructions. However, during gameplay testing, several critical misconceptions and errors surfaced, indicating significant gaps in its understanding.
+
+\vspace{1cm}
+One notable misconception was the AI's belief that bidding a card equal to the current diamond on auction guaranteed victory, regardless of other players' bids. This flawed understanding led to suboptimal decision-making and strategic disadvantages. Additionally, the AI inconsistently declared players with lower bids as winners without valid reasoning, further highlighting its flawed decision-making process.
+
+\vspace{1cm}
+Furthermore, GenAI struggled to grasp essential aspects of the game, such as the randomized nature of the auctioned diamonds. This lack of awareness resulted in ineffective bidding strategies and hindered the AI's competitiveness.
+\vspace{1cm}
+
+\end{frame}
+
+\newpage
+\begin{frame}
+\frametitle{\LARGE Teaching GenAI the Diamonds Game (contd.)}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Challenges and Iterative Refinement}\par}
+
+\raggedright
+\Large
+Another notable misconception was the AI's assumption that a card bid once could be reused for subsequent bids, ignoring the rule that bid cards must be discarded.
+
+\vspace{1cm}
+Moreover, the AI faced challenges in revealing bids, incorrectly assuming that bids did not need to be disclosed if one player had an obvious winning bid. This misconception led to tactical disadvantages and hindered the AI's overall performance. Additionally, GenAI required explicit instructions regarding the fixed number of rounds (13 rounds) and the absence of a "pass" option for players, indicating a lack of foundational understanding of the game's structure.
+
+\vspace{1cm}
+Despite receiving corrections and feedback, the AI struggled to retain previous adjustments, often repeating the same mistakes in subsequent gameplay sessions. These recurring errors underscored the need for iterative refinement and comprehensive training to enhance GenAI's understanding of the game and improve its strategic decision-making capabilities.
+
+
+\newpage
+\vspace{1cm}
+\end{frame}
+\begin{frame}
+\frametitle{\LARGE Iterating upon Strategy}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Iterating upon Strategy}\par}
+
+\raggedright
+\Large
+The iterative refinement of the AI's bidding strategy in the Diamonds card game involved a systematic process aimed at improving its gameplay effectiveness. Initially, the strategy focused on balancing card values with the value of the diamonds up for auction. The AI learned to prioritize bidding cards that closely matched the current diamond's value, maximizing its chances of winning valuable diamonds while conserving high-value cards.
+
+\vspace{1cm}
+Furthermore, the AI's strategy evolved to include preserving strong cards, particularly those considered advantageous for future bidding rounds. By assigning these cards a bonus score, the AI ensured their retention for opportune moments in the game, enhancing its strategic flexibility.
+
+\vspace{1cm}
+Key functions such as evaluating cards and determining bids played pivotal roles in refining the AI's strategy. The evaluate\_card function assessed each card's suitability for bidding based on various factors, providing insights into optimal bidding decisions. Meanwhile, the ai\_bid function executed the bidding process, selecting the most advantageous card while considering a minimum score threshold to avoid wasteful bids.
+
+\vspace{1cm}
+\end{frame}
+
+\newpage
+\begin{frame}
+\frametitle{\LARGE Iterating upon Strategy (contd.)}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+
+\raggedright
+\Large
+Despite initial success, there were opportunities for further improvement. Contextual overbidding emerged as a potential strategy, allowing the AI to strategically overbid in specific situations to outmaneuver opponents. Additionally, implementing a dynamic threshold for minimum bid scores would enable the AI to adapt its bidding strategy based on evolving game conditions, optimizing its decision-making process.
+
+\vspace{1cm}
+In summary, the iterative refinement of the AI's bidding strategy aimed to create a dynamic and adaptable player capable of competing effectively against human opponents. Through continuous evaluation and adjustment, the AI sought to achieve optimal performance and strategic mastery in the Diamonds card game.
+
+\vspace{1cm}
+\end{frame}
+
+\newpage
+\begin{frame}
+\frametitle{\LARGE Analysis and Conclusion}
+\vspace{0.5cm}
+\centering
+\textcolor{gray}{\rule{\linewidth}{0.5pt}}
+{\centering\textbf{\LARGE Analysis and Conclusion}\par}
+
+\raggedright
+\Large
+The AI's analysis of its performance in developing a strategic bidding approach for the Diamonds card game reveals significant progress and encountered challenges. The primary objective was to create a strategy balancing card and diamond values to optimize bidding decisions. Challenges included preserving high-value cards for strategic bidding.
+
+\vspace{1cm}
+The devised strategy involves evaluating cards by assigning scores based on their value and usefulness in bidding. By dynamically adjusting bidding thresholds and considering factors like player count and diamond value fluctuation, the AI aimed for informed bidding decisions. This approach allowed for winning valuable diamonds without wasting high-value cards and enabled effective bluffing through calculated overbidding.
+
+\vspace{1cm}
+In conclusion, the iterative refinement process led to significant improvements in the AI's understanding and performance. Through repeated gameplay and feedback, customized strategies tailored for Diamonds were developed. Further refinement is necessary, including incorporating past bidding history, to enhance the strategy's adaptability. Overall, this underscores the effectiveness of hands-on learning in complex gaming environments.
+
+\vspace{1cm}
+\end{frame}
+
+
+\end{document}
+
